@@ -1,0 +1,59 @@
+<% content_for(:meta) do %>
+  <meta name="<%= @dog.breed %>" content="<%= @dog.breed_summary %>" />
+<% end %>
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><%= @dog.breed %></h1>
+    <%= image_tag(@dog.image_file_name, alt: @dog.breed, class: "img-fluid breed-img") %>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row mx-auto">
+    <div class="col-lg-4">
+      <h4 class="text-center">Vital Stats</h3>
+      <ul>
+        <li>
+          Height: <%= @dog.height_min %> to <%= @dog.height_max %> inches
+        </li>
+        <li>
+          Weight: <%= @dog.weight_min %> to <%= @dog.weight_max %> lbs
+        </li>
+        <li>
+          Lifespan: <%= @dog.life_min %> to <%= @dog.life_max %> years
+        </li>
+        <li>
+          Sheds? <%= sheds?(@dog.shedding) %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h4 class="text-center">Personality</h3>
+      <ul>
+        <li>Friendliness
+          <ul>
+            <li>
+              Towards family: <%= convert_to_paws(@dog.affectionate) %>
+            </li>
+            <li>
+              Towards kids: <%= convert_to_paws(@dog.kid_friendly) %>
+            </li>
+            <li>
+              Towards strangers: <%= convert_to_paws(@dog.stranger_friendly) %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Trainability: <%= convert_to_paws(@dog.trainability) %>
+        </li>
+        <li>
+          Energy Level: <%= convert_to_paws(@dog.energy_level) %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h4 class="text-center">History</h3>
+    </div>
+  </div>
+</div>

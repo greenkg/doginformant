@@ -13,17 +13,34 @@
   </div>
 </section>
 
- <div class="album text-muted">
-  <div class="container mx-auto">
+<div class="container m-t-md">
 
-    <div class="row">
-      <% @dogs.each do |dog| %>
-        <div class="card mx-auto">
-        <%= image_tag(dog.image_file_name, alt: "Boxer Dog", class: "img-fluid") %>
-        <p class="card-text"><strong><%= dog.breed %></strong> <%= dog.breed_summary %></p>
+<!--filter tool-->
+  <div class="row">
+    <%= form_tag(dogs_path, :method => "get") do %>
+      Choose your preferred dog size
+      <div = "form-group">        
+        <%= label_tag(:size, "Small") %>
+        <%= radio_button_tag(:size, "small") %>
+        <%= label_tag(:size, "Large") %>
+        <%= radio_button_tag(:size, "large") %>
+      </div>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% @dogs.each do |dog| %>
+      <div class="card mx-auto">
+        <%= image_tag(dog.image_file_name, alt: dog.breed, class: "card-img-top img-fluid") %>
+        <div class="card-block">
+          <h4 class="card-title"><%= dog.breed %></h4>
+          <h6 class='text-muted'>          <%= dog.breed_group %></h6>
+          <p class-"card-text"><%= dog.breed_summary %></p>
+          <%= link_to("Read More", dog, class: 'btn btn-primary') %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

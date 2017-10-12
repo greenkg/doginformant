@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 # use Bootstrap styling
 gem 'bootstrap'
 gem 'autoprefixer-rails', '~> 6.0.3'
+gem 'popper_js', '~> 1.11.1'
 
 
 group :development, :test do
