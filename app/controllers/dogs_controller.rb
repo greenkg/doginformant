@@ -1,18 +1,9 @@
 class DogsController < ApplicationController
 
   def index
-
-    input = params[:size]
-
-    case input
-    when "small"
-      @dogs = Dog.where("height_min < '15'")
-    when "large"
-      @dogs = Dog.where("height_max > '18'")
-    else
-      @dogs = Dog.all
-    end
-
+    @dogs = Dog.where(nil)
+    @dogs = @dogs.dog_size(params[:size]) if params[:size].present?
+    @dogs = @dogs.energy(params[:energy]) if params[:energy].present?
   end
 
   def show

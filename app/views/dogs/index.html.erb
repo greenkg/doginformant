@@ -18,12 +18,23 @@
 <!--filter tool-->
   <div class="row">
     <%= form_tag(dogs_path, :method => "get") do %>
-      Choose your preferred dog size
+      Choose your preferred size
       <div = "form-group">        
         <%= label_tag(:size, "Small") %>
         <%= radio_button_tag(:size, "small") %>
+        <%= label_tag(:size, "Medium") %>
+        <%= radio_button_tag(:size, "medium") %>
         <%= label_tag(:size, "Large") %>
         <%= radio_button_tag(:size, "large") %>
+      </div>
+      Choose your preferred energy level
+      <div = "form-group">        
+        <%= label_tag(:energy, "Low") %>
+        <%= radio_button_tag(:energy, "low") %>
+        <%= label_tag(:energy, "Medium") %>
+        <%= radio_button_tag(:energy, "medium") %>
+        <%= label_tag(:energy, "High") %>
+        <%= radio_button_tag(:energy, "high") %>
       </div>
       <%= submit_tag("Search") %>
     <% end %>
