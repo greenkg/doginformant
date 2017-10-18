@@ -7,7 +7,7 @@
     <h1 class="jumbotron-heading">Dog Breeds</h1>
     <p class="lead text-muted">Whether you're looking for a purebred puppy, or just want to understand the potential in a mixed-breed dog, the typical breed characteristics provide some hints.</p>
     <p>
-      <button class="btn btn-primary" id="selector-button">Find your perfect dog</button>
+      <button class="btn btn-primary" id="selector-button" data-js-slide-down-form>Find your perfect dog</button>
     </p>
   </div>
 </section>
@@ -15,7 +15,7 @@
 <div class="container m-t-md">
 
 <!--filter tool-->
-  <div class="row" id="breed-selector" style="display:none">
+  <div class="row" id="breed-selector" style="display:none" data-js-breed-form>
     <%= form_tag(dogs_path, :method => "get") do %>
       <h5>Let's start with you:</h5>
 
