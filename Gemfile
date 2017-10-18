@@ -41,7 +41,6 @@ gem 'bcrypt', '~> 3.1.7'
 # use Bootstrap styling
 gem 'bootstrap'
 gem 'autoprefixer-rails'
-gem 'popper_js'
 gem 'sprockets', '~> 4.0.0.beta5'
 
 
