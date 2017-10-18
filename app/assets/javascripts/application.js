@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
-//= require dogs.js
+//= require_tree .
 
