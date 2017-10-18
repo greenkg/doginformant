@@ -13,24 +13,27 @@
   max-width: 100%;
 }
 
-html {
-  font-size: 70%;
+.flex-grid {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 70%;
+//Global styles
+
+.flex-grid .column {
+  width: 32%;
+  padding-top: 10px;
+}
+
+@media only screen and (max-width: 770px) {
+  .flex-grid .column {
+      width: 98%;
   }
 }
 
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 90%;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 100%;
+@media only screen and (min-width: 771px) and (max-width: 1040px) {
+  .flex-grid .column {
+    width:48%;
   }
 }

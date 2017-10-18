@@ -17,9 +17,9 @@ class Dog < ApplicationRecord
     "Non-AKC Designer Dog"
   ]
 
-  scope :dog_size, -> (size) { where dog_size: size }
-  scope :energy, -> (energy) { where('energy_level = ? OR energy_level = ?', energy_array(energy)[0], energy_array(energy)[1]) }
- 
+  scope :by_energy, -> (values) { where energy_level: values }
+  scope :by_kids, -> (values) { where kid_friendly: values }
+
   def generate_slug
     self.slug ||= breed.parameterize if breed
   end
@@ -34,15 +34,20 @@ class Dog < ApplicationRecord
     self.dog_size ||= "large" if height_min > 18
   end
 
-  def self.energy_array(energy)
-    case energy
-    when "low"
-      [1, 2]
-    when "medium"
-      [3, 3]
-    when "high"
-      [4, 5]
-    end
+  def self.filter(params)
+    #create an anonymous scope
+    results = Dog.all
+
+    #filter by energy level
+    results = results.by_energy(tidy_up(params[:energy])) if params[:energy].present?
+    #filter by friendliness towards children
+    results = results.by_kids(tidy_up(params[:kids])) if params[:kids].present?
+  
+    return results
+  end
+
+  def self.tidy_up(values)
+    tidied_values = values.each_char.map(&:to_i)
   end
   
 end

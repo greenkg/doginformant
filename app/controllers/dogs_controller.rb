@@ -1,9 +1,8 @@
 class DogsController < ApplicationController
 
   def index
-    @dogs = Dog.where(nil)
-    @dogs = @dogs.dog_size(params[:size]) if params[:size].present?
-    @dogs = @dogs.energy(params[:energy]) if params[:energy].present?
+    @dogs = Dog.filter(params.slice(:energy, :kids))
+    @filter_input = (params.slice(:energy, :kids))
   end
 
   def show

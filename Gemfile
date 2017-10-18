@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap'
 gem 'autoprefixer-rails', '~> 6.0.3'
 gem 'popper_js', '~> 1.11.1'
+gem 'sprockets'
 
 
 group :development, :test do
