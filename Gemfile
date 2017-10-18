@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
 
@@ -38,9 +40,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 # use Bootstrap styling
 gem 'bootstrap'
-gem 'autoprefixer-rails', '~> 6.0.3'
-gem 'popper_js', '~> 1.11.1'
-gem 'sprockets'
+gem 'autoprefixer-rails'
+gem 'popper_js'
+gem 'sprockets', '~> 4.0.0.beta5'
 
 
 group :development, :test do
@@ -49,7 +51,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.6.0'
+  gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end

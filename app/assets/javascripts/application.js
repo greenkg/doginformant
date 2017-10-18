@@ -12,15 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap
 //= require turbolinks
 //= require_tree ./behaviors
 
-$(document).ready(function(){
-
-  $("[data-js-slide-down-form]").click(function(){
-    $("[data-js-breed-form]").slideDown();
-  });
-
-});
 
