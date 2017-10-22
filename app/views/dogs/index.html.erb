@@ -2,65 +2,34 @@
   <meta name="All Dog Breeds" content="A list of dog breeds to help you select the perfect companion." />
 <% end %>
 
-<%= render 'layouts/hero' %>
+<div class="container container-custom-margin center-block">
 
-<div class="container m-t-md">
+  <div class="feature text-center">
+      <h3>Search by Breed</h3>
+  </div>
 
-<!--filter tool-->
-  <div class="row" id="breed-selector" style="display:none" data-js-breed-form>
-    <%= form_tag(dogs_path, :method => "get") do %>
-      <h5>Let's start with you:</h5>
-
-      <div class="form-group check-box">
-        <h6>How would you describe yourself?</h6>
-        <div class="radio">
-          <%= radio_button_tag(:energy, "1") %>
-          <%= label_tag("My favorite activity is sitting on the couch") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:energy, "12") %>
-          <%= label_tag("I like to go for the occasional walk.") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:energy, 234) %>
-          <%= label_tag("I walk daily.") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:energy, 45) %>
-          <%= label_tag("I run daily.") %>
-        </div>        
+  <div class="search">    
+    <%= form_tag dogs_path, :method => 'get' do %>
+      <div class="input-group">
+        <%= text_field_tag :search, params[:search], placeholder: "Search for a breed", class: "form-control" %>
+        <%= button_tag "Go", name: nil, class: "btn btn-search hero-search-btn" %>
       </div>
-
-      <div class="form-group check-box">
-        <h6>Do you have children?</h6>
-        <div class="radio">
-          <%= radio_button_tag(:kids, "5") %>
-          <%= label_tag("Yes, 7 years old or younger") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:kids, "45") %>
-          <%= label_tag("Yes, 8 years old or older") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:kids, "5") %>
-          <%= label_tag("I have children in both age groups.") %>
-        </div>
-        <div class="radio">
-          <%= radio_button_tag(:kids, "12345") %>
-          <%= label_tag("I don't have children.") %>
-        </div>        
-      </div>
-
-      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
+  <hr>
+
+  <div class="feature text-center">
+    <h3>Search results</h3>
+  </div>
+  
   <div class="flex-grid">
+    
     <% @dogs.each do |dog| %>
       <span class="column">
         <%= image_tag(dog.image_file_name, alt: dog.breed, class: "card-img-top img-fluid") %>
         <div>
-          <h4><%= dog.breed %></h4>
+          <h4 class="breed-name"><%= dog.breed %></h4>
           <h6><%= dog.breed_group %></h6>
           <p><%= dog.breed_summary %></p>
           <%= link_to("Read More", dog, class: 'btn btn-primary') %>

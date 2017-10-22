@@ -1,0 +1,24 @@
+<% content_for(:meta) do %>
+  <meta name="All Dog Breeds" content="A list of dog breeds to help you select the perfect companion." />
+<% end %>
+
+<%= render 'layouts/hero' %>
+
+<div class="container center-block">
+
+  <div class="flex-grid">
+    <div class="column-full feature">
+      <h3>Featured Dog</h3>
+      <div class="feature-body">
+        <%= image_tag(@dog.image_file_name, alt: @dog.breed, class: "card-img-top img-fluid") %>
+        <div>
+          <h4 class="breed-name"><%= @dog.breed %></h4>
+          <h6><%= @dog.breed_group %></h6>
+          <p><%= @dog.breed_summary %></p>
+          <%= link_to("Read More", @dog, class: 'btn btn-primary') %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

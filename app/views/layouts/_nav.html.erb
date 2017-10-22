@@ -1,9 +1,9 @@
-<div class="navbar fixed-top bg-custom">
-  <div class="navbar-header pull-left">
-      <%= link_to "Dog Informant", root_url %>
+<div class="navbar fixed-top nav-custom">
+  <div class="navbar-header pull-left"><h1>
+      <%= link_to "Dog Informant", root_url, id: 'site-title' %></h1>
     </div>
     <div class="navbar-header pull-right">
-      <%= link_to "All Dogs", dogs_path %>
-      <%= link_to "Breed Matcher", dogs_breed_matcher_path %>
+      <%= link_to "All Dogs", dogs_path, class: 'btn btn-custom' %>
+      <%= link_to "Match Tool", dogs_breed_matcher_path, class: "btn btn-custom" %>
     </div>
 </div>

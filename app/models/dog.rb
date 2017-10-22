@@ -87,7 +87,7 @@ class Dog < ApplicationRecord
 
   def self.search(search_term)
     #filter main page results by breed search form
-    Dog.where('breed LIKE ?', "%#{search_term}%") if search_term
+    Dog.where('lower(breed) LIKE ?', "%#{search_term.downcase}%") if search_term
   end
 
 end

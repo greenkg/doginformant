@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'dogs#index'
+  root :to => 'home#index'
 
   get 'dogs/breed-matcher' => 'dogs#breed_matcher'
   resources :dogs
