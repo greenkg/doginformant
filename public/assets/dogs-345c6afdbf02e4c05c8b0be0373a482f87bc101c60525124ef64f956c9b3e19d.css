@@ -1,0 +1,11 @@
+/* line 5, /home/kellyann/Documents/rails/doginformant/app/assets/stylesheets/dogs.scss */
+.breed-selector {
+  padding: 1em;
+  margin: 1em;
+  background-color: #B0DAE6;
+}
+
+/* line 11, /home/kellyann/Documents/rails/doginformant/app/assets/stylesheets/dogs.scss */
+#breed-selector {
+  display: none;
+}
