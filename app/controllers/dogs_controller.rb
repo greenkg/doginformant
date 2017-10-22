@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
 
+  before_action :require_admin, except: [:index, :show, :breed_matcher]
+
   def index
     if params[:search]
       @dogs = Dog.search(params[:search])
@@ -8,12 +10,12 @@ class DogsController < ApplicationController
     end
   end
 
-  def breed_matcher
-    @dogs = Dog.filter(params.slice(:energy, :kids, :size))
-  end
-
   def show
     @dog = Dog.find_by!(slug: params[:id])
+  end
+
+  def breed_matcher
+    @dogs = Dog.filter(params.slice(:energy, :kids, :size))
   end
 
   def new
@@ -47,6 +49,18 @@ private
 
   def dog_params
     dog_params = params.require(:dog).permit(:breed, :breed_group, :breed_summary, :image_file_name, :height_min, :height_max, :weight_min, :weight_max, :life_min, :life_max, :affectionate, :kid_friendly, :stranger_friendly, :trainability, :energy_level, :shedding, :popularity_rank, :slug, :dog_size, :history)
- end
+  end
+
+  def require_admin
+    unless current_user_admin?
+      redirect_to root_url, alert: "You do not have the authorization to access this feature."
+    end
+  end
+
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+
+  helper_method :current_user_admin?
 
 end

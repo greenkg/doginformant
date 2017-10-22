@@ -40,6 +40,7 @@ gem 'autoprefixer-rails'
 gem 'sprockets', '~> 4.0.0.beta5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 
 

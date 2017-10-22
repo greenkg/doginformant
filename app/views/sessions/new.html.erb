@@ -1,0 +1,17 @@
+<h2>Sign In</h2>
+
+<%= form_tag(session_path) do %>  
+  <fieldset>
+    <p>
+      <%= label_tag "Email or Username"%>
+      <%= text_field_tag :email, nil, autofocus: true %>
+    </p>
+    <p>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil %>
+    </p>
+    <p>
+      <%= submit_tag "Sign In" %>
+    </p>
+  </fieldset>
+<% end %>
