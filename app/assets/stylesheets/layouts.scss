@@ -1,12 +1,7 @@
 @import "bootstrap";
 
-.card {
-  width: 20rem;
-  margin-bottom: 2em;
-}
-
-.card-block {
-  padding: 1em;
+.content {
+  margin-top: 52px;
 }
 
 .breed-img {
@@ -36,4 +31,39 @@
   .flex-grid .column {
     width:48%;
   }
+}
+
+.form-inline .form-control {
+  width: auto;
+  display: inline-block;
+}
+
+.form-inline .form-group {
+  display: inline-block;
+}
+
+.hero {
+  position: relative;
+  max-width: 770px;
+  text-align: center;
+}
+
+.hero-search {
+  padding: 2%;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.image-responsive {
+  max-width: 100%;
+  height: auto;
+  min-width: 300px;
+}
+
+.bg-custom {
+  background-color: rgba(0, 0, 0, 1);
 }

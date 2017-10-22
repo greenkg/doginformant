@@ -1,0 +1,39 @@
+<% content_for(:meta) do %>
+  <meta name="Dog Breed Matcher" content="A list of dog breeds to help you select the perfect companion." />
+<% end %>
+
+<div class="container m-t-md">
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h4>Let's help you choose a breed!</h4>
+      <p>All dogs require a daily walk, playtime, and regular grooming.</p>
+      <p>The questions below will help you narrow down which breeds of dog typically have characteristics that make them well suited to your life, but all dogs are individuals and may not reflect the typical personality or size of their breed.</p>
+    </div>
+    <div class="col-10 center-block" align="center">
+      <button id="form-slider" class="btn btn-primary">Find a match!</button>
+    </div>
+  </div>
+
+  
+
+<!--filter tool-->
+
+  <div class="row" id="breed-selector">
+    <%= render 'breed_selector' %>
+  </div>
+  
+  <div class="flex-grid">
+    <% @dogs.each do |dog| %>
+      <span class="column">
+        <%= image_tag(dog.image_file_name, alt: dog.breed, class: "card-img-top img-fluid") %>
+        <div>
+          <h4><%= dog.breed %></h4>
+          <h6><%= dog.breed_group %></h6>
+          <p><%= dog.breed_summary %></p>
+          <%= link_to("Read More", dog, class: 'btn btn-primary') %>
+        </div>
+      </span>
+    <% end %>
+  </div>
+</div>

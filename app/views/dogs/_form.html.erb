@@ -1,0 +1,58 @@
+<%= form_for @dog do |f| %>
+
+  <fieldset>
+    Breed information
+    <p><%= f.label :breed %><%= f.text_field :breed %></p>
+    <p><%= f.select(:breed_group, Dog::BREED_GROUPS) %></p>
+    <p><%= f.label :breed_summary %>
+    <%= f.text_area :breed_summary %></p>
+    <p><%= f.label :popularity_rank %>
+    <%= f.text_field :popularity_rank %></p>
+    <p><%= f.label :history %>
+    <p><%= f.text_area :history %></p>
+  </fieldset>
+
+  <fieldset>
+    Vital Stats
+
+    <p><%= f.label :height_min %>
+        <%= f.text_field :height_min %></p>
+    <p><%= f.label :height_max %>
+        <%= f.text_field :height_max %></p>
+    <p><%= f.label :weight_min %>
+        <%= f.text_field :weight_min %></p>
+    <p><%= f.label :weight_max %>
+        <%= f.text_field :weight_max %></p>
+    <p><%= f.select(:dog_size, Dog::DOG_SIZES) %></p>
+    <p><%= f.label :life_min %>
+        <%= f.text_field :life_min %></p>
+    <p><%= f.label :life_max %>
+        <%= f.text_field :life_max %></p>
+    <p><%= f.label :shedding %>
+        <%= f.text_field :shedding %></p>
+  </fieldset>
+
+  <fieldset>
+    Personality
+    <p><%= f.label :affectionate %>
+        <%= f.text_field :affectionate %></p>
+    <p><%= f.label :kid_friendly %>
+        <%= f.text_field :kid_friendly%></p>
+    <p><%= f.label :stranger_friendly %>
+        <%= f.text_field :stranger_friendly %></p>
+    <p><%= f.label :trainability %>
+        <%= f.text_field :trainability %></p>
+    <p><%= f.label :energy_level %>
+        <%= f.text_field :energy_level %></p>
+    <p><%= f.label :life_max %>
+        <%= f.text_field :life_max %></p>
+  </fieldset>
+
+
+  <fieldset>
+    <%= f.button(type: "submit") %>
+    <button>Cancel</button>
+  </fieldset>
+
+
+<% end %>
