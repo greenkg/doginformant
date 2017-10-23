@@ -1,24 +1,17 @@
-# README
+# Dog Informant
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dog Informant is a tool to help users choose an appropriate breed of dog.
 
-Things you may want to cover:
+This is a practice project for me to practice setting up a Rails app, adding search and filter functionality, combining a bit of javascript with Rails, styling with Bootstrap, and deploying to Heroku.
 
-* Ruby version
+### Open items
 
-* System dependencies
+* Add RSpec tests
 
-* Configuration
+* Host the static assets on AWS Cloudfront
 
-* Database creation
+* Continue to add to the database of dogs
 
-* Database initialization
+* Add some sort of lazy load for pages rather than showing full database of dogs at once
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Continue to improve the front-end design for usability and aesthetics
