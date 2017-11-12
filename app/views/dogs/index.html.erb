@@ -27,7 +27,7 @@
     
     <% @dogs.each do |dog| %>
       <span class="column">
-        <%= image_tag(dog.image_file_name, alt: dog.breed, class: "card-img-top img-fluid") %>
+        <%= link_to image_tag(dog.image_file_name, alt: dog.breed, class: "card-img-top img-fluid"), dog %>
         <div>
           <h4 class="breed-name"><%= dog.breed %></h4>
           <h6><%= dog.breed_group %></h6>
