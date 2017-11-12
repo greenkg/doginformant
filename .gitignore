@@ -20,4 +20,8 @@
 /node_modules
 /yarn-error.log
 
+
+# Ignore seed files
+/db/seeds/*
+
 .byebug_history
